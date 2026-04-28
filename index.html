@@ -12,7 +12,7 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; }
         .hero-bg { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=1920'); 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=1920'); 
             background-size: cover; 
             background-position: center; 
         }
@@ -58,7 +58,7 @@
                 <span class="text-amber-400">for Our Community</span>
             </h1>
             <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                Creating a permanent community center to serve Afghan families across North Seattle, Lynnwood, Shoreline, Edmonds, Bothell, and Everett.
+                We are creating a permanent community center to serve Afghan families across North Seattle, Lynnwood, Shoreline, Edmonds, Bothell, Everett, and the communities in between.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#project" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg inline-block">
@@ -81,7 +81,7 @@
                     <p class="text-amber-600 text-sm font-semibold tracking-widest uppercase mb-3">Who We Are</p>
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Afghan Association <br> of Puget Sound</h2>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        The Afghan Association of Puget Sound represents thousands of Afghan families in the greater Seattle area. From longtime residents to recently resettled families, our community is vibrant and deeply committed to one another.
+                        The Afghan Association of Puget Sound represents thousands of Afghan families in the greater Seattle area. From longtime residents to recently resettled families, our community is vibrant and resilient.
                     </p>
                     <div class="grid grid-cols-3 gap-4 mb-8">
                         <div><p class="text-3xl font-bold text-amber-600">300+</p><p class="text-gray-500 text-xs">Families served</p></div>
@@ -168,7 +168,7 @@
                         <p class="text-amber-800 text-sm font-bold">Your Impact</p>
                         <p id="impactText" class="text-amber-700 text-sm">Every dollar helps bring our community center closer to reality.</p>
                     </div>
-                    <button class="w-full bg-amber-600 text-white py-4 rounded-xl font-bold shadow-lg">Donate via Secure Portal</button>
+                    <button class="w-full bg-amber-600 text-white py-4 rounded-xl font-bold shadow-lg">Donate Now</button>
                 </div>
                 <div class="space-y-4">
                     <div class="p-6 bg-blue-50 rounded-xl border border-blue-100">
@@ -176,8 +176,8 @@
                         <p class="text-blue-800 text-sm">Send to: <strong>@afghancommunityps</strong></p>
                     </div>
                     <div class="p-6 bg-green-50 rounded-xl border border-green-100">
-                        <h4 class="font-bold text-green-900 mb-2"><i class="fas fa-envelope mr-2"></i>Check / Other</h4>
-                        <p class="text-green-800 text-sm">Email <strong>info@afghancommunity.org</strong> for mailing instructions.</p>
+                        <h4 class="font-bold text-green-900 mb-2"><i class="fas fa-envelope mr-2"></i>Email Contact</h4>
+                        <p class="text-green-800 text-sm"><strong>info@afghancommunity.org</strong></p>
                     </div>
                 </div>
             </div>
@@ -198,42 +198,39 @@
 
     <footer class="bg-gray-900 text-gray-400 py-12 text-center">
         <p class="text-white font-bold mb-4">Afghan Association of Puget Sound</p>
-        <p class="text-sm mb-6 px-6">Serving North Seattle, Snohomish County, and beyond.</p>
         <p class="text-xs">&copy; 2026 AAPS. All rights reserved.</p>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Navigation toggle
         const menuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
-
-        // Donation Buttons Logic
+        // Donation logic
         const donationBtns = document.querySelectorAll('.donation-btn');
         const impactText = document.getElementById('impactText');
 
         donationBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                donationBtns.forEach(b => b.classList.remove('active'));
+                donationBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-amber-600', 'text-white', 'border-amber-600');
+                    b.classList.add('bg-gray-50', 'text-gray-700', 'border-gray-200');
+                });
                 btn.classList.add('active');
+                btn.classList.remove('bg-gray-50', 'text-gray-700', 'border-gray-200');
+                btn.classList.add('bg-amber-600', 'text-white', 'border-amber-600');
                 
                 const amount = btn.dataset.amount;
                 if(amount >= 2500) impactText.innerText = "Founding-level gift! You will be recognized as a Community Founder.";
                 else if(amount >= 1000) impactText.innerText = "Covers essential legal and permitting costs for the facility.";
-                else if(amount >= 500) impactText.innerText = "Funds a month of community outreach and program planning.";
                 else impactText.innerText = "Every dollar helps bring our community center closer to reality.";
             });
         });
 
-        // Form Submit Simulation
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you! Your message has been sent.');
+            alert('Message sent!');
             e.target.reset();
         });
     </script>
