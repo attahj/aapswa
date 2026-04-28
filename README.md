@@ -2,29 +2,6 @@
 
 A modern, responsive website for the Afghan Association of Puget Sound's community center fundraising campaign, optimized for GitHub Pages hosting.
 
-## 🚀 Quick Start
-
-### Option 1: Deploy to GitHub Pages
-
-1. **Create a new GitHub repository** (or use an existing one)
-   - Name it: `afghancommunity` or `community-center` (or whatever you prefer)
-
-2. **Add files to your repository**
-   - If deploying to `username.github.io`:
-     - Upload all files to the root directory
-   - If deploying to a project repository:
-     - Upload all files to a `docs/` folder, or to the root if you prefer
-     - Go to Settings → Pages → Choose source (either `main` branch with `docs/` folder or `gh-pages` branch)
-
-3. **Enable GitHub Pages**
-   - Go to Repository Settings → Pages
-   - Select the branch and folder where your files are located
-   - Your site will be live at `https://username.github.io` (or `https://username.github.io/repo-name`)
-
-### Option 2: Local Testing
-
-Simply open `index.html` in any web browser. No server required!
-
 ## 📁 File Structure
 
 ```
@@ -85,14 +62,6 @@ The contact form currently shows an alert. To make it functional:
 1. Use a service like [Formspree](https://formspree.io) or [EmailJS](https://www.emailjs.com)
 2. Update the form submission handler in `js/script.js`
 
-## 🌐 Domain Setup
-
-For a custom domain (e.g., `afghancommunity.org`):
-1. Purchase a domain from a registrar
-2. Update DNS records to point to GitHub Pages
-3. Add a `CNAME` file with your domain name to the repository
-4. Enable custom domain in repository Settings → Pages
-
 ## ✅ Browser Compatibility
 
 - Chrome (latest)
@@ -117,13 +86,6 @@ For a custom domain (e.g., `afghancommunity.org`):
 ## 📄 License
 
 This website template is provided as-is for use by Afghan Association of Puget Sound and similar community organizations.
-
-## 🤝 Support & Questions
-
-For help deploying or customizing:
-1. Check GitHub Pages documentation: https://pages.github.com
-2. Review Tailwind CSS docs: https://tailwindcss.com
-3. Reach out to your technical support contact
 
 ---
 
